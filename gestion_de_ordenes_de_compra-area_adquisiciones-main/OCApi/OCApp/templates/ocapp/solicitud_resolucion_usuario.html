@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitud de cuenta</title>
+    <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f4f4f4;
+          color: #333;
+          margin: 0;
+          padding: 0;
+      }
+
+      .container {
+          max-width: 600px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .auto{
+        color: #777;
+        font-style: italic;
+        font-size: 0.8em;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      h1 {
+          color: #007BFF;
+      }
+
+      p {
+          line-height: 1.6;
+      }
+
+      .footer {
+          margin-top: 20px;
+          text-align: center;
+          color: #777;
+      }
+
+      span{
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Se ha resuelto tu orden de compra #{{solicitud_id}}.</h1>
+      <p>El estado es <span>{{estado}}</span>.</p>
+
+      {% if descripcion_operador != '' or descripcion_operador is not None %}
+      <dl>
+        <dt>Descripción del operador:</dt>
+        <dd>{{descripcion_operador}}</dd>
+      </dl>
+      {% endif %}
+
+      {% if estado == 'Aprobada' %}
+      <dl>
+        <dt>Costo de la solicitud:</dt>
+        <dd>{{dinero_solicitud}}</dd>
+        <dt>Dinero disponible total:</dt>
+        <dd>{{dinero_disponible}}</dd>
+      </dl>
+      {% endif %}
+
+      <p>Si tienes alguna pregunta, no dudes en ponerte en contacto con nosotros.</p>
+      <footer class="footer">
+        <p>Atentamente,<br />El equipo de {{ empresa }}</p>
+      </footer>
+      <span class="auto">Este correo fue generado automáticamente.</span>
+    </main>
+  </body>
+</html>
