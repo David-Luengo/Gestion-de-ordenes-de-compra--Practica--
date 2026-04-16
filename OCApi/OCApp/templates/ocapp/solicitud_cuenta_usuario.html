@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitud de cuenta</title>
+    <style>
+      body {
+          font-family: 'Arial', sans-serif;
+          background-color: #f4f4f4;
+          color: #333;
+          margin: 0;
+          padding: 0;
+      }
+
+      .container {
+          max-width: 600px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .auto{
+        color: #777;
+        font-style: italic;
+        font-size: 0.8em;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      h1 {
+          color: #007BFF;
+      }
+
+      p {
+          line-height: 1.6;
+      }
+
+      .footer {
+          margin-top: 20px;
+          text-align: center;
+          color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Solicitud de cuenta</h1>
+      <p>Gracias por solicitar una cuenta en nuestro sitio.</p>
+      <p>
+        Nos pondremos en contacto contigo pronto para completar el proceso de creación de la cuenta.
+      </p>
+      <p>Los datos proporcionados son:</p>
+      <ul>
+        <li><strong>RUT:</strong> {{ rut_usuario }}</li>
+        <li><strong>Nombre:</strong> {{ nombre }}</li>
+        <li><strong>Área:</strong> {{ area }}</li>
+        <li><strong>Correo:</strong> {{ email }}</li>
+        {% if extrainfo %}
+        <li><strong>Información extra:</strong> {{ extrainfo }}</li>
+        {% endif %}
+      </ul>
+      <p>Si tienes alguna pregunta, no dudes en ponerte en contacto con nosotros.</p>
+      <footer class="footer">
+        <p>Atentamente,<br />El equipo de {{ empresa }}</p>
+      </footer>
+      <span class="auto">Este correo fue generado automáticamente.</span>
+    </main>
+  </body>
+</html>
