@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@funcionesTS/*": ["./funcionesTS/*"],
+      "@helpers/*": ["./helpers/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@interfaces/*": ["./Interfaces/*"],
+      "@pages/*": ["./pages/*"],
+      "@modals/*": ["./modals/*"],
+      "@routes/*": ["./routes/*"],
+      "@providers/*": ["./providers/*"],
+      "@utils/*": ["./utils/*"],
+      "@*": ["./*"]
+    },
+    "types": ["react", "react-dom", "node"],
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+  },
+  "include": [
+    "src"
+  ]
+  // "exclude": [
+  //   "src/**/*.pdf" // Excluye archivos PDF de la comprobación de tipos
+  // ],
+}

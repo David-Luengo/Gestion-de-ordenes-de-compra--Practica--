@@ -1,0 +1,8 @@
+.info-container {
+    display: flex;
+    
+}
+
+.info-box {
+    flex-direction: column;
+}
